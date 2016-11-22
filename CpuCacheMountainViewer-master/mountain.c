@@ -7,14 +7,14 @@
 
 #define MINBYTES (1 << 10)  /* Working set size ranges from 1 KB */
 #define MAXBYTES (1 << 27)  /* ... up to 128 MB */
-#define MAXSTRIDE 32        /* Strides range from 1 to 32 */
+#define MAXSTRIDE 64        /* Strides range from 1 to 64 */
 #define STRIDESTRIDE 1      /* increment stride by this amount each time */
-#define MAXELEMS MAXBYTES/sizeof(int) 
+#define MAXELEMS MAXBYTES/sizeof(double) 
 
-int data[MAXELEMS];         /* The array we'll be traversing */
+double data[MAXELEMS];         /* The array we'll be traversing */
 
 /* $end mountainmain */
-void init_data(int *data, int n);
+void init_data(double *data, int n);
 void test(int elems, int stride);
 double run(int size, int stride, double Mhz);
 
@@ -59,7 +59,7 @@ int main()
 /* $end mountainmain */
 
 /* init_data - initializes the array */
-void init_data(int *data, int n)
+void init_data(double *data, int n)
 {
     int i;
 
@@ -82,7 +82,7 @@ void test(int elems, int stride) /* The test function */
 double run(int size, int stride, double Mhz)
 {
     double cycles;
-    int elems = size / sizeof(int); 
+    int elems = size / sizeof(double); 
 
     test(elems, stride);                     /* warm up the cache */
     cycles = fcyc2(test, elems, stride, 0);  /* call test(elems,stride) */
