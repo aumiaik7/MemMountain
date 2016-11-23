@@ -50,7 +50,7 @@ int main()
 
 /* $begin mountainmain */
 	for (stride = 1; stride <= MAXSTRIDE; stride += STRIDESTRIDE) {
-	    printf("%d %.1f\n",stride,run(512, stride, Mhz));
+	    printf("%d %.1f\n",stride,run(4096, stride, Mhz));
 	}
 	//printf("\n");
     //}
