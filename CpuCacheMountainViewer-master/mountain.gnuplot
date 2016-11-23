@@ -4,7 +4,7 @@ set output 'mountain.png'
 set logscale y
 set pm3d
 set yrange [268435456:2048]
-set zlabel 'throughput'
+set zlabel 'throughput(MB/s)'
 set xlabel 'stride (x8 bytes)'
 set ylabel 'size (bytes)'
 set xyplane .2
