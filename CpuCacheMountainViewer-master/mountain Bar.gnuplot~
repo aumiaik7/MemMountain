@@ -1,7 +1,0 @@
-set term postscript eps enhanced color
-set output 'mountain.png'
-set linestyle 1 lt 1 lw 50
-# for gnuplot ver.4
-# set style line 1 lt 1 lw 50
-plot "datafile2" using 1:2 with imp ls 1
-

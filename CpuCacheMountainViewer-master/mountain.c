@@ -39,7 +39,7 @@ int main()
     //printf("\n");
 
  /* $begin mountainmain */
-    //for (size = MAXBYTES; size >= MINBYTES; size >>= 1) {
+    for (size = MAXBYTES; size >= MINBYTES; size >>= 1) {
 /* $end mountainmain */
 	/* Not shown in the text */
 	/*if (size > (1 << 20))
@@ -50,10 +50,10 @@ int main()
 
 /* $begin mountainmain */
 	for (stride = 1; stride <= MAXSTRIDE; stride += STRIDESTRIDE) {
-	    printf("%d %.1f\n",stride,run(512, stride, Mhz));
+	    printf("%d %d %.1f\n",size,stride,run(size, stride, Mhz));
 	}
-	//printf("\n");
-    //}
+	printf("\n");
+    }
     exit(0);
 }
 /* $end mountainmain */
